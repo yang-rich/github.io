@@ -168,9 +168,6 @@ body {
   overflow: auto;
   /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 }
-#modal-body {
-  background-color: black;
-}
 #modal-textbox {
   display: flex;
   flex-direction: column;
@@ -178,12 +175,24 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   height: 100%;
   width: 75%;
-  margin: 150px auto;
+  margin: auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 #class-trailer {
-  margin-top: 20px;
-  background: black;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+#class-trailer iframe,
+#class-trailer object,
+#class-trailer embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 #modal-footer {
   display: flex;
