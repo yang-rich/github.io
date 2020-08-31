@@ -188,8 +188,8 @@ body {
 #modal-footer {
   display: flex;
   height: 75%;
-  width: fit-content;
-  justify-content: flex-start;
+  /* width: fit-content; */
+  justify-content: space-evenly;
   background: rgb(0, 0, 0, 0.5);
   background: linear-gradient(
     35deg,
