@@ -41,7 +41,15 @@ $(() => {
       // console.log("2", $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
-    $("#awaken-image").attr("src", library[grabID].awakenImage);
+    if (grabID === "musa") {
+      $("#awaken-image")
+        .attr("src", library[grabID].awakenImage)
+        .css("height", "800px");
+    } else {
+      $("#awaken-image").attr("src", library[grabID].awakenImage);
+    }
+    console.log(1 + library[grabID].awakenImage);
+
     getItem(library[grabID].kzarkaID, `kzarka`);
     getItem(library[grabID].dandelionID, `dandelion`);
     getItem(library[grabID].kutumID, `kutum`);
