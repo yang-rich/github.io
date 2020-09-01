@@ -337,8 +337,7 @@ body {
   }
   #awaken-image {
     z-index: 5000000;
-    width: 10%;
-    height: 10%;
+    /* width: 100%; */
   }
   #kzarka {
     width: 100%;

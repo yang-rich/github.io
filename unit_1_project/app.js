@@ -4,9 +4,9 @@ $(() => {
     //calling an API takes a long time, so this queues getItem to run later
     const response = await fetch(`https://omegapepega.com/na/${id}/0`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
     });
     const myJson = await response.json(); //extract JSON from the http response
     // do something with myJson
@@ -35,7 +35,7 @@ $(() => {
     if ($("#modal").length > 0) {
       //get id and set the id to pull data for whatever else needs it runs the display block
       $modal.css("display", "block");
-      //for any susequent clicks, they will occur after our close modal's detach() so we need to append the modal back
+      //for any subsequent clicks, they will occur after our close modal's detach() so we need to append the modal back
     } else {
       $("body").append($modal);
       // console.log("2", $modal);
