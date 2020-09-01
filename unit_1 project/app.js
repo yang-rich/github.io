@@ -2,15 +2,12 @@ $(() => {
   const getItem = async (id, div) => {
     //async() doesn't pause execution to run, will run after everything else. similar to what we learned in class but async+await pairing is apparently the current way to use this
     //calling an API takes a long time, so this queues getItem to run later
-    const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/https://omegapepega.com/na/${id}/0`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`https://omegapepega.com/na/${id}/0`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const myJson = await response.json(); //extract JSON from the http response
     // do something with myJson
     // referencing name property from myJson to add text to div id we feed it to print weapon price
