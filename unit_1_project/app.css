@@ -231,6 +231,7 @@ body {
 }
 #weapon-column {
   z-index: 5;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -325,6 +326,7 @@ body {
   #weapon-column {
     z-index: 5000000;
     height: 100%;
+    width: 33%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -428,24 +430,26 @@ body {
       rgba(227, 7, 7, 0.9) 100%
     );
   }
-  #weapon-column {
-    z-index: 5000000;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    margin-left: 0px;
-  }
   #awaken-image-container {
     position: absolute;
     right: -10%;
-    margin-top: 5%;
     justify-content: right;
   }
   #awaken-image {
     width: auto;
     height: 400px;
+    margin-left: 10%;
+    margin-top: 15%;
+  }
+  #weapon-column {
+    z-index: 5000000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0px;
   }
   #kzarka {
     width: 100%;
