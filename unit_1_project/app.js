@@ -1,16 +1,16 @@
 $(() => {
   const getItem = async (id, div) => {
-    //async() doesn't pause execution to run, will run after everything else. similar to what we learned in class but async+await pairing is apparently the current way to use this
-    //calling an API takes a long time, so this queues getItem to run later
+    //async() doesn't pause execution to run, will run after everything else. similar to class. AJAX = asynchronous javascript and xml.
+    //calling an API takes a long time, so this queues getItem to run later. async and await function as a pair, need one to use the other.
     const response = await fetch(`https://omegapepega.com/na/${id}/0`, {
       method: "GET",
       // headers: {
       //   "Content-Type": "application/json",
       // },
     });
-    const myJson = await response.json(); //extract JSON from the http response
-    // do something with myJson
-    // referencing name property from myJson to add text to div id we feed it to print weapon price
+    const myJson = await response.json(); //extract JSON from the http response and asign to myJson constant
+    // then do something with myJson
+    // referencing name property from myJson to add text to div id we feed it to print both name and weapon price
     $(`#${div}`).text(myJson.name + ": " + myJson.pricePerOne);
   };
   // // line 1 adds function to task queue - done with file b/c havent run anything
@@ -20,33 +20,34 @@ $(() => {
   // // we finish everything else in task queue first
   // // after hitting the "end" program hits the getItem functions to run last
 
-  //generate name tags
-
   //set variables to reference div IDs
   const $modal = $("#modal");
   const $closeBtn = $("#close");
 
   //open modal
   const openModal = (event) => {
+    //get id and set the id to pull data for whatever uses the clicked target's id to make decisions
     const grabID = $(event.target).attr("id");
-    console.log(grabID);
+    // console.log(grabID);
     // console.log(11 + $("#modal-vid").attr("src"));
     // console.log(library[grabID].iframe);
+
     //this if statement necessary b/c of how our close modal works ("detach()")
-    //if our modal already exists (first click), then we simply display block and everything is great
+    //if our modal already exists (first click), then we simply show and everything is great
     if ($("#modal").length > 0) {
-      //get id and set the id to pull data for whatever else needs it runs the display block
-      $modal.css("display", "block");
+      $modal.show("slow");
       //for any subsequent clicks, they will occur after our close modal's detach() so we need to append the modal back
     } else {
       $("body").append($modal);
+      $modal.hide();
+      $modal.show("");
       // console.log("2", $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
     $("#awaken-image").attr("src", library[grabID].awakenImage);
     // }
     console.log(1 + library[grabID].awakenImage);
-
+    //pull weaponIDs from my library based on the clicked ID, then assign it to these divs
     getItem(library[grabID].kzarkaID, `kzarka`);
     getItem(library[grabID].dandelionID, `dandelion`);
     getItem(library[grabID].kutumID, `kutum`);

@@ -224,8 +224,7 @@ body {
 }
 #modal-footer {
   display: flex;
-  height: 700px;
-  /* width: fit-content; */
+  height: 800px;
   justify-content: center;
   background: rgb(0, 0, 0, 0.5);
   background: linear-gradient(
@@ -234,9 +233,6 @@ body {
     rgba(227, 7, 7, 0.9) 100%
   );
 }
-/* #modal-footer-image {
-  z-index: 400;
-} */
 #kzarka {
   width: 100%;
   font-size: 40px;
