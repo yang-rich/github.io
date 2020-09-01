@@ -20,6 +20,8 @@ $(() => {
   // // we finish everything else in task queue first
   // // after hitting the "end" program hits the getItem functions to run last
 
+  //generate name tags
+
   //set variables to reference div IDs
   const $modal = $("#modal");
   const $closeBtn = $("#close");
@@ -27,7 +29,7 @@ $(() => {
   //open modal
   const openModal = (event) => {
     const grabID = $(event.target).attr("id");
-    // console.log(grabID);
+    console.log(grabID);
     // console.log(11 + $("#modal-vid").attr("src"));
     // console.log(library[grabID].iframe);
     //this if statement necessary b/c of how our close modal works ("detach()")
@@ -41,11 +43,6 @@ $(() => {
       // console.log("2", $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
-    // if (grabID === "musa") {
-    //   $("#awaken-image")
-    //     .attr("src", library[grabID].awakenImage)
-    //     .css("height", "800px");
-    // } else {
     $("#awaken-image").attr("src", library[grabID].awakenImage);
     // }
     console.log(1 + library[grabID].awakenImage);

@@ -20,6 +20,9 @@ body {
   margin: auto;
 }
 .classCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 5px solid black;
   width: 24%;
   margin: 5px;
@@ -28,6 +31,29 @@ body {
 }
 .classCard:hover {
   filter: none;
+}
+.classCard:hover > .name {
+  background-color: black;
+  font-size: 30px;
+  transition: all 0.5s;
+  color: white;
+  text-shadow: 2px;
+}
+.name {
+  position: relative;
+  z-index: 1;
+  background-color: none;
+  width: auto;
+  height: auto;
+  color: white;
+  text-shadow: blue;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: none;
+  /* text-transforms: */
+  font-style: italic;
+  text-align: center;
+  padding-top: 1px;
 }
 .row {
   display: flex;
@@ -46,7 +72,7 @@ body {
 #ranger {
   background-image: url(images/Class_Portraits/normal_ranger.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 #sorceress {
@@ -58,13 +84,13 @@ body {
 #berserker {
   background-image: url(images/Class_Portraits/normal_berserker.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 #tamer {
   background-image: url(images/Class_Portraits/normal_tamer.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: left;
   background-size: cover;
 }
 #musa {
@@ -88,7 +114,7 @@ body {
 #kunoichi {
   background-image: url(images/Class_Portraits/normal_kunoichi.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 #ninja {
@@ -100,13 +126,13 @@ body {
 #wizard {
   background-image: url(images/Class_Portraits/normal_wizard.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
 }
 #witch {
   background-image: url(images/Class_Portraits/normal_witch.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   background-size: cover;
 }
 #darkknight {
@@ -118,13 +144,13 @@ body {
 #striker {
   background-image: url(images/Class_Portraits/normal_striker.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 #mystic {
   background-image: url(images/Class_Portraits/normal_mystic.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
 }
 #archer {
@@ -136,7 +162,7 @@ body {
 #lahn {
   background-image: url(images/Class_Portraits/normal_lahn.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
   background-size: cover;
 }
 #shai {
@@ -240,31 +266,6 @@ body {
 #awaken-image {
   position: relative;
 }
-
-/* .classCard:hover > .name {
-  background-color:
-  font-size:
-  transition: all 0.5s;
-  color:
-  text-shadow:
-}
-
-.name{
-  position: relative;
-  z-index: 100;
-  background-color:
-  width:
-  height:
-  color: white
-  text-shadow
-  font-family
-  font-size
-  font-weight
-  text-transforms
-  font-style
-  text-align
-  padding-top
-} */
 
 /* tablets */
 @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
