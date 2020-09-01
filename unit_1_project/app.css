@@ -1,3 +1,5 @@
+/* desktop */
+
 .header {
   opacity: 0.5;
   display: flex;
@@ -12,15 +14,14 @@ body {
 }
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
-  width: 1024px;
+  width: 100%;
   margin: auto;
 }
 .classCard {
   border: 5px solid black;
-  height: 330px;
-  width: 256px;
+  width: 24%;
   margin: 5px;
   background-color: rgb(207, 207, 207, 0.4);
   filter: grayscale();
@@ -29,11 +30,12 @@ body {
   filter: none;
 }
 .row {
-  height: 330px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin-top: 15px;
+  flex-direction: row;
+  height: 330px;
+  width: 50%;
+  margin: auto;
 }
 #warrior {
   background-image: url(images/Class_Portraits/normal_warrior.png);
@@ -172,8 +174,8 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0.3);
-  height: 100%;
   width: 75%;
   margin: auto;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
@@ -259,3 +261,104 @@ body {
   text-align
   padding-top
 } */
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+  .header > img {
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+  body {
+    background-color: red;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly center;
+    width: 100%;
+    height: initial;
+    margin: auto;
+  }
+  .classCard {
+    border: 5px solid black;
+    width: initial;
+    height: 500px;
+    /* margin: 5px; */
+    background-color: rgb(207, 207, 207, 0.4);
+    filter: none;
+  }
+  #modal {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    /* position: fixed; */
+    z-index: 2;
+    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+    overflow: auto;
+    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+  }
+  #modal-textbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: center; */
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 75%;
+    /* margin: auto; */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  #modal-footer {
+    display: flex;
+    position: relative;
+    /* height: 700px; */
+    justify-content: left;
+    background: rgb(0, 0, 0, 0.5);
+    background: linear-gradient(
+      35deg,
+      rgba(0, 0, 0, 0.9) 60%,
+      rgba(227, 7, 7, 0.9) 100%
+    );
+  }
+  #weapon-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0px;
+  }
+  #awaken-image-container {
+    position: absolute;
+    right: -25%;
+  }
+  #awaken-image {
+    z-index: 5000000;
+    width: 10%;
+    height: 10%;
+  }
+  #kzarka {
+    width: 100%;
+    font-size: 20px;
+    color: orangered;
+    margin: 0px;
+    text-align: center;
+  }
+  #dandelion {
+    width: 100%;
+    font-size: 20px;
+    color: turquoise;
+    margin: 0px;
+    text-align: center;
+  }
+  #kutum {
+    width: 100%;
+    font-size: 20px;
+    color: purple;
+    margin: 0px;
+    text-align: center;
+  }
+}
