@@ -265,7 +265,7 @@ body {
 /* mobile */
 @media only screen and (max-width: 600px) {
   .header > img {
-    opacity: 0.5;
+    opacity: 1;
     display: flex;
     justify-content: center;
     max-width: 100%;
