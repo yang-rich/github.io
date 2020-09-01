@@ -41,13 +41,13 @@ $(() => {
       // console.log("2", $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
-    if (grabID === "musa") {
-      $("#awaken-image")
-        .attr("src", library[grabID].awakenImage)
-        .css("height", "800px");
-    } else {
-      $("#awaken-image").attr("src", library[grabID].awakenImage);
-    }
+    // if (grabID === "musa") {
+    //   $("#awaken-image")
+    //     .attr("src", library[grabID].awakenImage)
+    //     .css("height", "800px");
+    // } else {
+    $("#awaken-image").attr("src", library[grabID].awakenImage);
+    // }
     console.log(1 + library[grabID].awakenImage);
 
     getItem(library[grabID].kzarkaID, `kzarka`);
@@ -55,7 +55,6 @@ $(() => {
     getItem(library[grabID].kutumID, `kutum`);
     // console.log("3", $modal);
   };
-
   //close modal
   // console.log("4", $modal);
   //close modal written using detach() instead of display hide b/c we needed everything on the modal to stop running (video/audio)

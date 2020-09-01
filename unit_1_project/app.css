@@ -208,6 +208,9 @@ body {
     rgba(227, 7, 7, 0.9) 100%
   );
 }
+/* #modal-footer-image {
+  z-index: 400;
+} */
 #kzarka {
   width: 100%;
   font-size: 40px;
@@ -227,10 +230,10 @@ body {
   margin: 60px;
 }
 #weapon-column {
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 300px;
   text-align: left;
 }
 #awaken-image {
@@ -262,6 +265,111 @@ body {
   padding-top
 } */
 
+/* tablets */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .header > img {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+  body {
+    background-color: purple;
+  }
+  .row {
+    display: flex;
+    justify-content: space-evenly center;
+    width: 100%;
+    height: initial;
+    margin: auto;
+  }
+  .classCard {
+    border: 5px solid black;
+    width: 25%;
+    height: 500px;
+    background-color: rgb(207, 207, 207, 0.4);
+    filter: none;
+  }
+  #modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+    overflow: auto;
+    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+  }
+  #modal-textbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 75%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  #modal-footer {
+    z-index: 5000;
+    display: flex;
+    position: relative;
+    height: 400px;
+    justify-content: left;
+    background: rgb(0, 0, 0, 0.5);
+    background: linear-gradient(
+      35deg,
+      rgba(0, 0, 0, 0.9) 60%,
+      rgba(227, 7, 7, 0.9) 100%
+    );
+  }
+  #weapon-column {
+    z-index: 5000000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: space-evenly;
+    margin-left: 0px;
+  }
+  #awaken-image-container {
+    position: absolute;
+    right: -10%;
+    justify-content: right;
+  }
+  #awaken-image {
+    width: auto;
+    height: 600px;
+  }
+  #kzarka {
+    width: 100%;
+    font-size: 30px;
+    color: orangered;
+    background-color: black;
+    opacity: 0.8;
+    margin: 0px;
+    text-align: center;
+  }
+  #dandelion {
+    width: 100%;
+    font-size: 30px;
+    color: turquoise;
+    background-color: black;
+    opacity: 0.8;
+    margin: 0px;
+    text-align: center;
+  }
+  #kutum {
+    width: 100%;
+    font-size: 30px;
+    color: purple;
+    background-color: black;
+    opacity: 0.8;
+    margin: 0px;
+    text-align: center;
+  }
+}
+
 /* mobile */
 @media only screen and (max-width: 600px) {
   .header > img {
@@ -285,18 +393,15 @@ body {
     border: 5px solid black;
     width: initial;
     height: 500px;
-    /* margin: 5px; */
     background-color: rgb(207, 207, 207, 0.4);
     filter: none;
   }
   #modal {
-    /* display: none; */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
-    /* position: fixed; */
     z-index: 2;
     /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     overflow: auto;
@@ -306,17 +411,16 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* justify-content: center; */
     background-color: rgba(255, 255, 255, 0.3);
     width: 75%;
-    /* margin: auto; */
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   }
   #modal-footer {
+    z-index: 5000;
     display: flex;
     position: relative;
-    /* height: 700px; */
-    justify-content: left;
+    height: 400px;
+    justify-content: center;
     background: rgb(0, 0, 0, 0.5);
     background: linear-gradient(
       35deg,
@@ -325,6 +429,8 @@ body {
     );
   }
   #weapon-column {
+    z-index: 5000000;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -333,16 +439,20 @@ body {
   }
   #awaken-image-container {
     position: absolute;
-    right: -25%;
+    right: -10%;
+    margin-top: 5%;
+    justify-content: right;
   }
   #awaken-image {
-    z-index: 5000000;
-    /* width: 100%; */
+    width: auto;
+    height: 400px;
   }
   #kzarka {
     width: 100%;
     font-size: 20px;
     color: orangered;
+    background-color: black;
+    opacity: 0.8;
     margin: 0px;
     text-align: center;
   }
@@ -350,6 +460,8 @@ body {
     width: 100%;
     font-size: 20px;
     color: turquoise;
+    background-color: black;
+    opacity: 0.8;
     margin: 0px;
     text-align: center;
   }
@@ -357,6 +469,8 @@ body {
     width: 100%;
     font-size: 20px;
     color: purple;
+    background-color: black;
+    opacity: 0.8;
     margin: 0px;
     text-align: center;
   }
