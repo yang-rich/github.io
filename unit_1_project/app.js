@@ -1,24 +1,31 @@
 $(() => {
-  const getItem = async (id, div) => {
-    //async() doesn't pause execution to run, will run after everything else. similar to class. AJAX = asynchronous javascript and xml.
-    //calling an API takes a long time, so this queues getItem to run later. async and await function as a pair, need one to use the other.
-    const response = await fetch(`https://omegapepega.com/na/${id}/0`, {
-      method: "GET",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-    });
-    const myJson = await response.json(); //extract JSON from the http response and asign to myJson constant
-    // then do something with myJson
-    // referencing name property from myJson to add text to div id we feed it to print both name and weapon price
-    $(`#${div}`).text(myJson.name + ": " + myJson.pricePerOne);
-  };
+  // const getItem = async (id, div) => {
+  //   //async() doesn't pause execution to run, will run after everything else. similar to class. AJAX = asynchronous javascript and xml.
+  //   //calling an API takes a long time, so this queues getItem to run later. async and await function as a pair, need one to use the other.
+  //   const response = await fetch(`https://omegapepega.com/na/${id}/0`, {
+  //     method: "GET",
+  //     // headers: {
+  //     //   "Content-Type": "application/json",
+  //     // },
+  //   });
+  //   const myJson = await response.json(); //extract JSON from the http response and asign to myJson constant
+  //   // then do something with myJson
+  //   // referencing name property from myJson to add text to div id we feed it to print both name and weapon price
+  //   $(`#${div}`).text(myJson.name + ": " + myJson.pricePerOne);
+  // };
   // // line 1 adds function to task queue - done with file b/c havent run anything
   // // event loop picks up function in task queue line 2-15
   // // line 2 executes and creates getItem function which is async function and does not run
   // // when getItem() comes up next, task queue sees we're trying to call the async function and adds it to the end of the list because that is what async() does
   // // we finish everything else in task queue first
   // // after hitting the "end" program hits the getItem functions to run last
+
+  //using AJAX from class:
+  const getItem = (id, div) => {
+    $.ajax({ url: `https://omegapepega.com/na/${id}/0` }).then((data) => {
+      $(`#${div}`).text(data.name + ": " + data.pricePerOne);
+    });
+  };
 
   //set variables to reference div IDs
   const $modal = $("#modal");
@@ -28,9 +35,9 @@ $(() => {
   const openModal = (event) => {
     //get id and set the id to pull data for whatever uses the clicked target's id to make decisions
     const grabID = $(event.target).attr("id");
-    // console.log(grabID);
-    // console.log(11 + $("#modal-vid").attr("src"));
-    // console.log(library[grabID].iframe);
+    // console.log(1 + grabID);
+    // console.log(2 + $("#modal-vid").attr("src"));
+    // console.log(3 + library[grabID].iframe);
 
     //this if statement necessary b/c of how our close modal works ("detach()")
     //if our modal already exists (first click), then we simply show and everything is great
@@ -41,24 +48,24 @@ $(() => {
       $("body").append($modal);
       $modal.hide();
       $modal.show("");
-      // console.log("2", $modal);
+      // console.log(4 + $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
     $("#awaken-image").attr("src", library[grabID].awakenImage);
     // }
-    console.log(1 + library[grabID].awakenImage);
+    // console.log(5 + library[grabID].awakenImage);
     //pull weaponIDs from my library based on the clicked ID, then assign it to these divs
     getItem(library[grabID].kzarkaID, `kzarka`);
     getItem(library[grabID].dandelionID, `dandelion`);
     getItem(library[grabID].kutumID, `kutum`);
-    // console.log("3", $modal);
+    // console.log(6 + $modal);
   };
   //close modal
-  // console.log("4", $modal);
+  // console.log(7 + $modal);
   //close modal written using detach() instead of display hide b/c we needed everything on the modal to stop running (video/audio)
   const closeModal = () => {
     $modal.detach();
-    // console.log($("#modal").length);
+    // console.log(8 + $("#modal").length);
   };
   //on-clicks
   $(".classCard").on("click", openModal);
@@ -69,7 +76,7 @@ $(() => {
       closeModal();
     }
   };
-  // console.log(modal);
+  // console.log(9 + modal);
   //on-hover
   $(".classCard").on("hover", () => {
     $classCard.css("filter", "none");

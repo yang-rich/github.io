@@ -39,6 +39,14 @@ body {
   color: white;
   text-shadow: 2px;
 }
+.classCard:hover > img {
+  position: absolute;
+  z-index: -1;
+  top: 40%;
+  right: -200px;
+  height: 1000px;
+  width: 1000px;
+}
 .name {
   position: relative;
   z-index: 1;
@@ -288,6 +296,14 @@ body {
     background-color: rgb(207, 207, 207, 0.4);
     filter: none;
   }
+  .classCard:hover > img {
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    right: -200px;
+    height: 1000px;
+    width: 1000px;
+  }
   #modal {
     width: 100%;
     height: 100%;
@@ -394,6 +410,14 @@ body {
     height: 500px;
     background-color: rgb(207, 207, 207, 0.4);
     filter: none;
+  }
+  .classCard:hover > img {
+    position: relative;
+    z-index: -1;
+    top: 0%;
+    right: 25%;
+    height: 1000px;
+    width: 1000px;
   }
   #modal {
     width: 100%;
