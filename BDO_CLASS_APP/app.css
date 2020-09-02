@@ -271,8 +271,8 @@ body {
   position: relative;
 }
 
-/* tablets */
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+/* ipad Pro */
+@media only screen and (min-device-width: 601px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
   .header > img {
     opacity: 1;
     display: flex;
@@ -292,7 +292,7 @@ body {
   .classCard {
     border: 5px solid black;
     width: 25%;
-    height: 500px;
+    height: 300px;
     background-color: rgb(207, 207, 207, 0.4);
     filter: none;
   }
@@ -384,7 +384,6 @@ body {
     text-align: center;
   }
 }
-
 /* mobile */
 @media only screen and (max-width: 600px) {
   .header > img {
