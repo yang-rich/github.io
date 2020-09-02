@@ -47,7 +47,7 @@ $(() => {
     } else {
       $("body").append($modal);
       $modal.hide();
-      $modal.show("");
+      $modal.show("slow");
       // console.log(4 + $modal);
     }
     $("#modal-vid").attr("src", library[grabID].iframe);
@@ -55,6 +55,7 @@ $(() => {
     // }
     // console.log(5 + library[grabID].awakenImage);
     //pull weaponIDs from my library based on the clicked ID, then assign it to these divs
+    // ` ` needed b/c we're using these divs as an input
     getItem(library[grabID].kzarkaID, `kzarka`);
     getItem(library[grabID].dandelionID, `dandelion`);
     getItem(library[grabID].kutumID, `kutum`);
@@ -69,7 +70,6 @@ $(() => {
   };
   //on-clicks
   $(".classCard").on("click", openModal);
-  $closeBtn.on("click", closeModal);
   //googled this, no idea why it works tbh
   window.onclick = function (event) {
     if (event.target == modal) {
@@ -77,7 +77,7 @@ $(() => {
     }
   };
   // console.log(9 + modal);
-  //on-hover
+  //on hover give color
   $(".classCard").on("hover", () => {
     $classCard.css("filter", "none");
   });
