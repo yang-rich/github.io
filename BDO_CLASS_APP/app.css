@@ -434,7 +434,6 @@ body {
     text-align: center;
   }
   .classCard:hover > .name {
-    z-index: 5000;
     background-color: black;
     font-size: 20px;
     transition: all 0.5s;
@@ -447,7 +446,7 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 5000;
     /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
     overflow: auto;
     /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
