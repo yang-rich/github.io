@@ -413,11 +413,33 @@ body {
   }
   .classCard:hover > img {
     position: relative;
-    z-index: -1;
+    z-index: -15000;
     top: 0%;
     right: 25%;
-    height: 1000px;
-    width: 1000px;
+    height: 400px;
+    width: 400px;
+  }
+  .name {
+    position: bottom;
+    z-index: 1;
+    background-color: none;
+    width: auto;
+    height: auto;
+    color: white;
+    text-shadow: blue;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: none;
+    font-style: italic;
+    text-align: center;
+  }
+  .classCard:hover > .name {
+    z-index: 5000;
+    background-color: black;
+    font-size: 20px;
+    transition: all 0.5s;
+    color: white;
+    text-shadow: 2px;
   }
   #modal {
     width: 100%;
