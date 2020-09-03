@@ -55,7 +55,7 @@ $(() => {
     // }
     // console.log(5 + library[grabID].awakenImage);
     //pull weaponIDs from my library based on the clicked ID, then assign it to these divs
-    // ` ` needed b/c we're using these divs as an input
+    // ` ` needed b/c we are concatenating these into ${div} of our getItem function
     getItem(library[grabID].kzarkaID, `kzarka`);
     getItem(library[grabID].dandelionID, `dandelion`);
     getItem(library[grabID].kutumID, `kutum`);
@@ -70,7 +70,7 @@ $(() => {
   };
   //on-clicks
   $(".classCard").on("click", openModal);
-  //googled this, no idea why it works tbh
+  //googled this, no idea why it works tbh but it closes my modal when i click on anything that's not part of the modal
   window.onclick = function (event) {
     if (event.target == modal) {
       closeModal();
